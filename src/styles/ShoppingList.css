@@ -3,30 +3,14 @@
 	padding: 32px 0;
 	display: flex;
 	flex-wrap: wrap;
-	/* max-width: 800px; */
+	width: 100%;
+	justify-content: center;
+	gap: 2%;
+}
+
+
+.plant-list {
 	width: 100%;
 	display: flex;
 	justify-content: center;
-}
-
-.lmj-plant-item {
-	border-radius: 10px;
-	height: 150px;
-	width: 150px;
-	margin: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	position: relative;
-}
-
-.lmj-sales {
-	position: absolute;
-	right: 0px;
-	top: 10px;
-	font-weight: 500;
-	color: white;
-	padding: 5px 10px;
-	background-color: #31b572;
 }

@@ -1,26 +1,39 @@
-import '../styles/Cart.css';
 import { useState } from 'react'
+import '../styles/Cart.css'
 
-
-function Cart() {
-	const monsteraPrice = 8
-	const [cart, updateCart] = useState(0)
+function Cart({ cart, updateCart }) {
 	const [isOpen, setIsOpen] = useState(false)
-
+	const total = cart.reduce(
+		(acc, plantType) => acc + plantType.amount * plantType.price,
+		0
+	)
 	return isOpen ? (
 		<div className='lmj-cart'>
-			<button className='cart-close' onClick={() => setIsOpen(false)}> Fermer Le Panier</button>
-			<h2>Panier</h2>
-			Monstera : {monsteraPrice}€
-			<button onClick={() => updateCart(cart + 1)}>
-				Ajouter
+			<button
+				className='cart-close'
+				onClick={() => setIsOpen(false)}
+			>
+				Fermer
 			</button>
-			<h3>
-				Total : {monsteraPrice * cart}€
-			</h3>
+			<h2>Panier</h2>
+			{cart.map(({ name, price, amount }, index) => (
+				<div key={`${name}-${index}`}>
+					{name} {price}€ x {amount}
+				</div>
+			))}
+
+			<h3>Total : {total}€</h3>
+			<button onClick={() => updateCart([])}>Vider le panier</button>
 		</div>
 	) : (
-		<button className='cart-open' onClick={() => setIsOpen(true)}> Ouvrir Le Panier</button>
+		<div className='lmj-cart-closed'>
+			<button
+				className='cart-open'
+				onClick={() => setIsOpen(true)}
+			>
+				Ouvrir le Panier
+			</button>
+		</div>
 	)
 }
 

@@ -8,8 +8,12 @@ import Cart from './Cart';
 import ShoppingList from './ShoppingList';
 import Recommendation from './Recommendation';
 import Footer from './Footer';
+import { useState } from 'react';
 
 function App() {
+
+  const [cart, updateCart] = useState([])
+
   return (
     <div className="App">
       <header className="App-header">
@@ -23,9 +27,9 @@ function App() {
       </header>
       <main>
         <div className="main">
-          <Cart />
+          <Cart cart={cart} updateCart={updateCart} />
         <div className='wrapper'>
-          <ShoppingList />
+          <ShoppingList cart={cart} updateCart={updateCart} />
         </div>
         </div>
       </main>
