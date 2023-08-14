@@ -7,6 +7,7 @@ import Banner from './Banner';
 // import Cart from './Cart';
 import ShoppingList from './ShoppingList';
 import Recommendation from './Recommendation';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <ShoppingList />
         </div>
       </main>
+        <Footer />
     </div>
   );
 }
