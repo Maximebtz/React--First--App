@@ -2,4 +2,31 @@
     background-color: #31b572;
     padding: 32px;
     color: white;
+    transition: all 0.4s ease-in-out;
+    max-width: 350px;
+}
+
+.cart-open {
+    position: absolute;
+    height: 36px;
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+    background-color: #31b572;
+    color: white;
+    font-size: medium;
+    font-weight: 600;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.cart-close {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: medium;
+    cursor: pointer;
+    width: max-content;
+    padding: 20px;
+    font-weight: 600;
 }

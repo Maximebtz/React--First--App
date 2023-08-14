@@ -4,6 +4,7 @@
    padding: 0;
    margin: 0;
    box-sizing: border-box;
+   transition: all 0.4s ease-in-out;
 }
  
 /************** Body **************/
@@ -14,16 +15,22 @@ body {
 }
 
 /************** Header **************/
-/* header {
-   nav{
-      
-   }
-} */
+.lmj-logo {
+   height: 70px;
+   margin-right: 25px;
+}
  
 /************** Wrapper **************/
 .wrapper {
-   padding: 25px;
+   padding: 65px;
+   display: flex;
 }
+
+.main {
+   display: flex;
+   transition: all 0.4s ease-in-out;
+}
+
  
 /************** Footer *************/
 /* footer {
