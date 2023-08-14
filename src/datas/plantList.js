@@ -1,4 +1,6 @@
 import '../styles/ShoppingList.css'
+import monstera from '../assets/monstera.jpg'
+
 
 export const plantList = [
 	{
