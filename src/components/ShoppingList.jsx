@@ -5,25 +5,25 @@ import Categories from './Categories'
 import '../styles/ShoppingList.css'
 
 function ShoppingList({ cart, updateCart }) {
-	const [activeCategory, setActiveCategory] = useState('')
-	const categories = plantList.reduce(
+	const [activeCategory, setActiveCategory] = useState('') // État pour la catégorie active
+	const categories = plantList.reduce( // Crée un tableau de catégories uniques à partir de la liste de plantes
 		(acc, plant) =>
 			acc.includes(plant.category) ? acc : acc.concat(plant.category),
 		[]
 	)
 
 	function addToCart(name, price) {
-		const currentPlantAdded = cart.find((plant) => plant.name === name)
+		const currentPlantAdded = cart.find((plant) => plant.name === name) // Recherche de l'article dans le panier
 		if (currentPlantAdded) {
 			const cartFilteredCurrentPlant = cart.filter(
 				(plant) => plant.name !== name
-			)
+			) // Filtrage du panier pour enlever l'article actuel
 			updateCart([
 				...cartFilteredCurrentPlant,
-				{ name, price, amount: currentPlantAdded.amount + 1 }
+				{ name, price, amount: currentPlantAdded.amount + 1 } // Mise à jour de la quantité
 			])
 		} else {
-			updateCart([...cart, { name, price, amount: 1 }])
+			updateCart([...cart, { name, price, amount: 1 }]) // Ajout de l'article au panier
 		}
 	}
 
@@ -36,6 +36,7 @@ function ShoppingList({ cart, updateCart }) {
 			/>
 
 			<ul className='lmj-plant-list'>
+				{/* Affichage des articles de la liste de plantes */}
 				{plantList.map(({ id, cover, name, water, light, price, category }) =>
 					!activeCategory || activeCategory === category ? (
 						<div key={id}>
@@ -55,4 +56,4 @@ function ShoppingList({ cart, updateCart }) {
 	)
 }
 
-export default ShoppingList
+export default ShoppingList;

@@ -5,10 +5,11 @@ function Categories({ setActiveCategory, categories, activeCategory }) {
 		<div className='lmj-categories'>
 			<select
 				value={activeCategory}
-				onChange={(e) => setActiveCategory(e.target.value)}
+				onChange={(e) => setActiveCategory(e.target.value)} // Action pour changer la catégorie active
 				className='lmj-categories-select'
 			>
 				<option value=''>---</option>
+				{/* Affichage des options de catégorie */}
 				{categories.map((cat) => (
 					<option key={cat} value={cat}>
 						{cat}
@@ -20,4 +21,4 @@ function Categories({ setActiveCategory, categories, activeCategory }) {
 	)
 }
 
-export default Categories
+export default Categories;
